@@ -28,3 +28,7 @@ Elimina tutte le cartelle create dagli script
 4. appstore folder location (/home/odoo/appstore)
 
 Genera un file di configurazione standard. 
+
+## TODO
+
+- [ ] Unificare gli script
