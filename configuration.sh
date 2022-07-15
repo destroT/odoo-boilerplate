@@ -10,10 +10,11 @@ cd $DIRPATH
 git clone https://github.com/OCA/OpenUpgrade.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/odoo/odoo.git -b 13.0 --depth=1 --single-branch
 
-sh ./$DIRPATH/gitpull.sh $DIRPATH
+echo "Cloning Git Repositories in $DIRPATH"
+sh $DIRPATH/gitpull.sh
 
 # Prepare reuirements for odoo 3.8
-sed -i -e "/< '3.7'/d" -e "/<\= '3.7'/d" -e "/\=\= '3.7'/d" -e "/< '3.8'/d" $DIRPATH/odoo/requirements.txt
+sed -i -e "/< '3.7'/d" -e "/<\= '3.7'/d" -e "/\=\= '3.7'/d" -e "/< '3.8'/d" -e "/\=\= 'win32'$/d" $DIRPATH/odoo/requirements.txt
 
 # Prepare virtualenv
 pip install --upgrade pip
