@@ -9,20 +9,16 @@ OPEN_UPGRADE=$1
 BASE_FOLDER=$2
 CUSTOM_ADDONS=$3
 APPSTORE=$4
-SERVER_WIDE_MODULES=""
-OU_PATH=""
+ODOO_PATH="$BASE_FOLDER/odoo/addons,$BASE_FOLDER/odoo/odoo/addons" 
+
 if [ $1 = "y" ]; then
-	OU_PATH="$BASE_FOLDER/OpenUpgrade,"
-	SERVER_WIDE_MODULES="server_wide_modules = base,web,queue_job,openupgrade_framework\nupgrade_path=$BASE_FOLDER/OpenUpgrade/openupgrade_scripts/scripts"
-else
-	SERVER_WIDE_MODULES="server_wide_modules=base,web.queue_job"
+	ODOO_PATH="$BASE_FOLDER/OpenUpgrades/addons,$BASE_FOLDER/OpenUpgrades/odoo/addons"
 fi;
 
 # Template
 cat << EOF
 [options]
-addons_path = $BASE_FOLDER/odoo/odoo/addons,$OU_PATH
-        $BASE_FOLDER/odoo/addons,
+addons_path = $ODOO_PATH,
         $CUSTOM_ADDONS, 
 	$APPSTORE/home/odoo/appstore13,
         $BASE_FOLDER/external-addons/addons,
@@ -99,7 +95,6 @@ addons_path = $BASE_FOLDER/odoo/odoo/addons,$OU_PATH
     $BASE_FOLDER/OCA/web,
     $BASE_FOLDER/OCA/website,
     $BASE_FOLDER/OCA/wms
-$SERVER_WIDE_MODULES
 admin_passwd = admin
 csv_internal_sep = ,
 db_host = False

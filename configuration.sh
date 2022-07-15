@@ -7,8 +7,8 @@ echo $DIRPATH
 
 # Clone directories
 cd $DIRPATH
-git clone https://github.com/OCA/OpenUpgrade.git -b 14.0 --depth=1 --single-branch
-git clone https://github.com/odoo/odoo.git -b 14.0 --depth=1 --single-branch
+git clone https://github.com/OCA/OpenUpgrade.git -b 13.0 --depth=1 --single-branch
+git clone https://github.com/odoo/odoo.git -b 13.0 --depth=1 --single-branch
 
 sh ./$DIRPATH/gitpull.sh $DIRPATH
 
@@ -26,6 +26,4 @@ pip install -r $DIRPATH/OpenUpgrade/requirements.txt
 pip install git+https://github.com/OCA/openupgradelib.git
 pip install -r $custom_addons/requirements.txt
 
-
 deactivate
-
