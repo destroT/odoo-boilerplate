@@ -86,4 +86,5 @@ Clone all addons external to Odoo modules (OCA, Cybrosys, Serpent, ecc...)
 
 ## TODO
 
+- [ ] Add configuration file
 - [ ] Unificare gli script
