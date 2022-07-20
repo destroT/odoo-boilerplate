@@ -13,6 +13,7 @@ source setup.sh -o -c /home/odoo/chiarcosso_odoo
 source make_config_file.sh -o -c /home/odoo/chiarcosso_odoo -a /home/odoo/appstore >> ou.conf
 . venv/bin/activate
 OpenUpgrade/odoo/odoo-bin -c ou.conf -u all -d your_db --stop-after-init
+odoo/odoo-bin -c odoo.conf -d your_db -u all --stop-after-init
 ```
 
 **Standard**
