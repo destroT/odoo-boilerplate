@@ -1,8 +1,11 @@
 #!/bin/bash
-#DIRPATH=$(pwd)
 
-mkdir OCA
-cd OCA
+DIRPATH=${1:-$( cd -- "$( dirname -- "$0"; )" &> /dev/null && pwd )}
+
+echo "\n\nCURRENT WORKING FOLDER: $DIRPATH\n\n"
+
+mkdir -p $DIRPATH/OCA
+cd $DIRPATH/OCA
 
 git clone https://github.com/OCA/account-analytic.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/OCA/account-budgeting.git -b 13.0 --depth=1 --single-branch
@@ -19,6 +22,7 @@ git clone https://github.com/OCA/brand.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/OCA/calendar.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/OCA/commission.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/OCA/connector.git -b 13.0 --depth=1 --single-branch
+git clone https://github.com/OCA/connector-telephony.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/OCA/contract.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/OCA/currency.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/OCA/credit-control.git -b 13.0 --depth=1 --single-branch
@@ -81,11 +85,9 @@ git clone https://github.com/OCA/website.git -b 13.0 --depth=1 --single-branch
 git clone https://github.com/OCA/wms.git -b 13.0 --depth=1 --single-branch
 
 cd ..
-mkdir external-addons
-cd external-addons
-mkdir repos
-mkdir addons
-cd repos
+mkdir -p $DIRPATH/external-addons/repos
+mkdir -p $DIRPATH/external-addons/addons
+cd $DIRPATH/external-addons/repos
 
 # MUK
 git clone https://github.com/muk-it/muk_base.git -b 13.0 --depth=1 --single-branch
@@ -127,4 +129,4 @@ do
     fi
 done
 
-cd ..
+cd $DIRPATH
