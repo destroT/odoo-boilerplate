@@ -2,7 +2,7 @@
 
 Scripts needed to install all the components necessary to run Odoo in a new or existing development environment.
 
-## Configurazione ed esecuzione
+## Setup and execution
 
 **OpenUpgrade**
 
@@ -80,7 +80,7 @@ This script allows you to generate an Odoo configuration file with several param
 
 ### gitpull.sh
 
-Clone di tutti gli addons esterni ai moduli di Odoo (OCA, Cybrosys, Serpent, ecc...)
+Clone all addons external to Odoo modules (OCA, Cybrosys, Serpent, ecc...)
 
 > NB: No need to run it manually, it is already used by `setup.sh`
 
