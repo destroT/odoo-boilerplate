@@ -1,8 +1,11 @@
 #!/bin/bash
-#DIRPATH=$(pwd)
 
-mkdir OCA
-cd OCA
+DIRPATH=${1:-$( cd -- "$( dirname -- "$0"; )" &> /dev/null && pwd )}
+
+echo "\n\nCURRENT WORKING FOLDER: $DIRPATH\n\n"
+
+mkdir -p $DIRPATH/OCA
+cd $DIRPATH/OCA
 
 git clone https://github.com/OCA/account-analytic.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/OCA/account-budgeting.git -b 14.0 --depth=1 --single-branch
@@ -19,6 +22,7 @@ git clone https://github.com/OCA/brand.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/OCA/calendar.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/OCA/commission.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/OCA/connector.git -b 14.0 --depth=1 --single-branch
+git clone https://github.com/OCA/connector-telephony.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/OCA/contract.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/OCA/currency.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/OCA/credit-control.git -b 14.0 --depth=1 --single-branch
@@ -81,26 +85,24 @@ git clone https://github.com/OCA/website.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/OCA/wms.git -b 14.0 --depth=1 --single-branch
 
 cd ..
-mkdir external-addons
-cd external-addons
-mkdir repos
-mkdir addons
-cd repos
+mkdir -p $DIRPATH/external-addons/repos
+mkdir -p $DIRPATH/external-addons/addons
+cd $DIRPATH/external-addons/repos
 
-# MUK
+# # MUK
 git clone https://github.com/muk-it/muk_base.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/muk-it/muk_dms.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/muk-it/muk_web.git -b 14.0 --depth=1 --single-branch
 
-# Serpent
+# # Serpent
 git clone https://github.com/JayVora-SerpentCS/fleet_management.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/JayVora-SerpentCS/SerpentCS_Contributions.git -b 14.0 --depth=1 --single-branch
 
-# Cybrosys
+# # Cybrosys
 git clone https://github.com/CybroOdoo/OpenHRMS.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/CybroOdoo/CybroAddons.git -b 14.0 --depth=1 --single-branch
 
-# Others
+# # Others
 git clone https://github.com/Jarsa/transport-management-system.git -b 14.0 --depth=1 --single-branch
 git clone https://gitlab.com/hailangvn/task-pomodoro.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/gityopie/odoo-addons.git -b 14.0 --depth=1 --single-branch
@@ -113,6 +115,7 @@ cd ..
 
 # attivo extglob nella shell che non è attiva per default
 shopt -s extglob
+
 # ciclo for sulle sotto-cartelle dei git, ma escludo le cartelle setup
 for d in $DIRPATH/external-addons/repos/*/!(setup)/
 do
@@ -127,4 +130,4 @@ do
     fi
 done
 
-cd ..
+cd $DIRPATH

@@ -1,4 +1,7 @@
-odoo/*
-OpenUpgrade/*
-addons/*
-external-addons/*
+external-addons
+OCA
+odoo
+OpenUpgrade
+venv
+*.conf
+*.swp

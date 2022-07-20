@@ -1,33 +1,89 @@
 # Odoo 14 
 
-Script necessari all'installazione di tutte le componenti necessarie ad eseguire Odoo in un ambiente di sviluppo nuovo o già esistente.
+Scripts needed to install all the components necessary to run Odoo in a new or existing development environment.
 
-## configuration.sh
+## Configurazione ed esecuzione
 
-Questo script clone le cartelle di Odoo e OpenUpgrade, successivamente crea un ambiente virtuale e installa tutte le dipendenze necessarie.
+**OpenUpgrade**
 
-> NB: Loo script è configurato per python 3.8 (ci sono dipendeze a scelta nei requirements di Odoo)
+```bash
+# If not alredy configured
+source setup.sh -o -c /home/odoo/chiarcosso_odoo
 
-## gitpull.sh
+# If conf file does not exists
+source make_config_file.sh -o -c /home/odoo/chiarcosso_odoo -a /home/odoo/appstore >> ou.conf
 
-Clone di tutti gli addons esterni ai moduli custom (OCA, Cybrosys, Serpent, ecc...)
+. venv/bin/activate
+odoo/odoo-bin -c ou.conf -u all -d your_db --stop-after-init
+```
 
-> NB: dovrebbe essere già richiamato da `configuration.sh`
+**Standard**
 
-## clean.sh
+```bash
+# If not alredy configured
+source setup.sh -c /home/odoo/chiarcosso_odoo
 
-Elimina tutte le cartelle create dagli script
+# If conf file does not exists
+source make_config_file.sh -c /home/odoo/chiarcosso_odoo -a /home/odoo/appstore >> odoo.conf
 
-## config_template.sh
+. venv/bin/activate
+odoo/odoo-bin -c odoo.conf -d your_db
+```
 
-### Parametri
+> NB: With **OpenUpgrade** setup you can run also **standard Odoo**
 
-1. y prepare script for open_upgrade
-2. base folder (script folder)
-3. custom addons folder (/home/odoo/chiarcosso_odoo)
-4. appstore folder location (/home/odoo/appstore)
+## Scripts
 
-Genera un file di configurazione standard. 
+### setup.sh
+
+```
+This script is to create the virtual environment and clone all the necessary repos
+    
+    -o, --OpenUpgrade       Download and prepare OpenUpgrade
+    -c, ---custom-addons    Custom Addons Directory
+    -d, --dir-path          [Optional] Select different base directory (do not touch if you don't know)
+```
+
+This script clones the Odoo and OpenUpgrade folders, then creates a virtual environment and installs all necessary dependencies.
+
+> NB: The script is configured for python 3.8 (there are dependencies of your choice in the Odoo requirements)
+
+### clean.sh
+
+Delete all folders created by scripts:
+    - odoo
+    - OpenUpgrade
+    - OCA
+    - external-addons
+    - venv
+
+### make_config_file.sh
+
+```
+This script will automatically generate the Odoo configuration file
+
+    -o, --OpenUpgrade       Select configuration file type
+                              with True or 'y' or 'yes': Create config file for Open Upgrade version
+                              with False or 'n' or 'no': Create standard setup file
+
+    -c, ---custom-addons    Custom Addons Directory
+    
+    -a, --Appstore          Appstore addons directory
+
+    -b, --base-folder       [Optional] Select different base directory (do not touch if you don't know)
+```
+
+This script allows you to generate an Odoo configuration file with several parameters.
+
+> Esempio: ```bash source make_config_file.sh -c /home/odoo/addons -a /home/odoo/appstore >> /etc/odoo/new_conf.conf ```
+
+
+### gitpull.sh
+
+Clone di tutti gli addons esterni ai moduli di Odoo (OCA, Cybrosys, Serpent, ecc...)
+
+> NB: No need to run it manually, it is already used by `setup.sh`
+
 
 ## TODO
 
