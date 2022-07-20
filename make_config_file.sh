@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 MAN="
 This script will automatically generate the Odoo configuration file

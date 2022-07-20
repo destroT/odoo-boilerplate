@@ -48,15 +48,6 @@ This script clones the Odoo and OpenUpgrade folders, then creates a virtual envi
 
 > NB: The script is configured for python 3.8 (there are dependencies of your choice in the Odoo requirements)
 
-### clean.sh
-
-Delete all folders created by scripts:
-    - odoo
-    - OpenUpgrade
-    - OCA
-    - external-addons
-    - venv
-
 ### make_config_file.sh
 
 ```
@@ -77,6 +68,14 @@ This script allows you to generate an Odoo configuration file with several param
 
 > Esempio: ```bash source make_config_file.sh -c /home/odoo/addons -a /home/odoo/appstore >> /etc/odoo/new_conf.conf ```
 
+### clean.sh
+
+Delete all folders created by scripts:
+    - odoo
+    - OpenUpgrade
+    - OCA
+    - external-addons
+    - venv
 
 ### gitpull.sh
 

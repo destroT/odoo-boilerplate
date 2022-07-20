@@ -8,6 +8,8 @@ This script is to create the virtual environment and clone all the necessary rep
     -c, ---custom-addons    Custom Addons Directory
     
     -d, --dir-path          [Optional] Select different base directory (do not touch if you don't know)
+
+    
     "
 
 # Assign variable to path
