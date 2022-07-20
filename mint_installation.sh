@@ -6,7 +6,6 @@
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y zip
-sudo apt install -y git
 sudo apt install -y gdebi-core
 sudo apt install -y python3 python3-pip python3-dev python3-setuptools python3-wheel python3-venv python3-lxml
 sudo apt install -y xfonts-75dpi xfonts-base fonts-noto-mono fonts-noto fontconfig
