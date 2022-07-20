@@ -14,7 +14,7 @@ This script will automatically generate the Odoo configuration file
     -b, --base-folder       [Optional] Select different base directory (do not touch if you don't know)
     "
 
-OPEN_UPGRADE=False
+OPEN_UPGRADE=false
 BASE_FOLDER=$(cd -- "$( dirname -- "$0"; )" &> /dev/null && pwd)
 APPSTORE=""
 CUSTOM_ADDONS="/home/odoo/chiarcosso_odoo,"
@@ -25,7 +25,7 @@ if [ "$1" = "--help" -o "$1" = "-h" ]; then
     echo $MAN
     return
 elif  [ "$1" = "--OpenUpgrade" -o "$1" = "-o" ]; then
-    OPEN_UPGRADE=True
+    OPEN_UPGRADE=true
     shift 1
 elif [ "$1" = "--custom-addons" -o "$1" = "-c" ]; then
     CUSTOM_ADDONS="$2,"
@@ -34,7 +34,7 @@ elif [ "$1" = "--appstore" -o "$1" = "-a" ]; then
     APPSTORE="$2,"
     shift 2
 elif [ "$1" = "--base-folder" -o "$1" = "-b" ]; then
-    BASE_FOLDER=$( cd -- "$( dirname -- "$2"; )" &> /dev/null && pwd )
+    BASE_FOLDER=$2
     shift 2
 else
     break
@@ -45,7 +45,7 @@ done
 # Setup OpenUpgrade Variables
 SERVER_WIDE_MODULES=""
 
-if [ $OPEN_UPGRADE ]; then
+if [ $OPEN_UPGRADE = true ]; then
     ODOO_PATH="$BASE_FOLDER/OpenUpgrade/addons,$BASE_FOLDER/OpenUpgrade/odoo/addons,"
 fi
 
