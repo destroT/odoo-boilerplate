@@ -2,6 +2,11 @@
 
 Scripts needed to install all the components necessary to run Odoo in a new or existing development environment.
 
+**Add custom folder to addons path and get detected by VsCode**
+```bash
+ln -fs $PATH/to/custom/python/module $DIRPATH/venv/lib/python3.8/site-packages/odoo/addons
+```
+
 ## Setup and execution
 
 **OpenUpgrade**
