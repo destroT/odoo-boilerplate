@@ -1,6 +1,11 @@
 # Odoo 14 
 
-Scripts needed to install all the components necessary to run Odoo in a new or existing development environment.
+Scripts to prepare a new Odoo environment for either running or upgrading to a new version
+
+**Add custom folder to addons path and get modules detected by VsCode**
+```bash
+ln -fs $PATH/to/custom/python/module $DIRPATH/venv/lib/python3.8/site-packages/odoo/addons
+```
 
 ## Setup and execution
 
@@ -44,8 +49,7 @@ This script is to create the virtual environment and clone all the necessary rep
     -d, --dir-path          [Optional] Select different base directory (do not touch if you don't know)
 ```
 
-This script clones the Odoo and OpenUpgrade folders, then creates a virtual environment and installs all necessary dependencies.
-
+This script clones the Odoo and OpenUpgrade folders, then creates a virtual environment.
 > NB: The script is configured for python 3.8 (there are dependencies of your choice in the Odoo requirements)
 
 ### make_config_file.sh

@@ -8,7 +8,6 @@ This script is to create the virtual environment and clone all the necessary rep
     -c, ---custom-addons    Custom Addons Directory
     
     -d, --dir-path          [Optional] Select different base directory (do not touch if you don't know)
-
     
     "
 
@@ -52,6 +51,8 @@ python3 -m venv venv
 pip install wheel
 pip install pysftp
 pip install -r $DIRPATH/odoo/requirements.txt
+# Installing Odoo allows VsCode to locate all modules but can cause problems
+# pip install $DIRPATH/odoo/
 pip install -r $CUSTOM_ADDONS/requirements.txt
 
 # Config OpenUpgrade
