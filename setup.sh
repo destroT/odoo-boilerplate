@@ -50,9 +50,9 @@ python3 -m venv venv
 
 pip install wheel
 pip install pysftp
-# pip install -r $DIRPATH/odoo/requirements.txt
-pip install $DIRPATH/odoo/
+pip install -r $DIRPATH/odoo/requirements.txt
 pip install -r $CUSTOM_ADDONS/requirements.txt
+#pip install $DIRPATH/odoo/
 
 # Config OpenUpgrade
 if [ $OPEN_UPGRADE = True ]; then
