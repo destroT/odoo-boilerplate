@@ -19,7 +19,7 @@ source setup.sh -o -c /home/odoo/chiarcosso_odoo
 source make_config_file.sh -o -c /home/odoo/chiarcosso_odoo -a /home/odoo/appstore >> ou.conf
 
 . venv/bin/activate
-odoo/odoo-bin -c ou.conf -u all -d your_db --stop-after-init
+odoo/odoo-bin -c ou.conf -u all --stop-after-init -d your_db 
 ```
 
 **Standard**
@@ -75,11 +75,12 @@ This script allows you to generate an Odoo configuration file with several param
 ### clean.sh
 
 Delete all folders created by scripts:
-    - odoo
-    - OpenUpgrade
-    - OCA
-    - external-addons
-    - venv
+
+- odoo
+- OpenUpgrade
+- OCA
+- external-addons
+- venv
 
 ### gitpull.sh
 
