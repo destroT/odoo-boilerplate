@@ -117,7 +117,7 @@ cd ..
 shopt -s extglob
 
 # ciclo for sulle sotto-cartelle dei git, ma escludo le cartelle setup
-for d in $DIRPATH/external-addons/repos/*/!(setup)/
+for d in $DIRPATH/external-addons/repos/*/*/
 do
     # estraggo il nome della directory e compongono la destinazione
     finalFolder=($basename $d)
