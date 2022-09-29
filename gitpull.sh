@@ -119,15 +119,7 @@ shopt -s extglob
 # ciclo for sulle sotto-cartelle dei git, ma escludo le cartelle setup
 for d in $DIRPATH/external-addons/repos/*/*/
 do
-    # estraggo il nome della directory e compongono la destinazione
-    finalFolder=($basename $d)
-    destinazione=$DIRPATH/external-addons/addons/$d
-
-    # verifico se la destinazione esiste, quindi creo un link
-    if [ ! -d "$destinazione" ]
-    then
-        ln -s $d $DIRPATH/external-addons/addons/
-    fi
+     ln -sf $d $DIRPATH/external-addons/addons/
 done
 
 cd $DIRPATH
