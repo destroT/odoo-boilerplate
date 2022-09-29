@@ -91,7 +91,7 @@ cd $DIRPATH/external-addons/repos
 
 # # MUK
 git clone https://github.com/muk-it/muk_base.git -b 14.0 --depth=1 --single-branch
-git clone https://github.com/muk-it/muk_dms.git -b 14.0 --depth=1 --single-branch
+# git clone https://github.com/muk-it/muk_dms.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/muk-it/muk_web.git -b 14.0 --depth=1 --single-branch
 
 # # Serpent
@@ -104,7 +104,7 @@ git clone https://github.com/CybroOdoo/CybroAddons.git -b 14.0 --depth=1 --singl
 
 # # Others
 git clone https://github.com/Jarsa/transport-management-system.git -b 14.0 --depth=1 --single-branch
-git clone https://gitlab.com/hailangvn/task-pomodoro.git -b 14.0 --depth=1 --single-branch
+# git clone https://gitlab.com/hailangvn/task-pomodoro.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/gityopie/odoo-addons.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/ksolves-store/web_listview_sticky_header.git -b 14.0 --depth=1 --single-branch
 
@@ -119,7 +119,8 @@ shopt -s extglob
 # ciclo for sulle sotto-cartelle dei git, ma escludo le cartelle setup
 for d in $DIRPATH/external-addons/repos/*/*/
 do
-     ln -sf $d $DIRPATH/external-addons/addons/
+    # Forza creazione link simbolici
+     ln -sfn $d $DIRPATH/external-addons/addons/
 done
 
 cd $DIRPATH
