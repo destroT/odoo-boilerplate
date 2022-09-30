@@ -10,7 +10,7 @@ sudo apt install -y gdebi-core
 sudo apt install -y python3 python3-pip python3-dev python3-setuptools python3-wheel python3-venv python3-lxml
 sudo apt install -y xfonts-75dpi xfonts-base fonts-noto-mono fonts-noto fontconfig
 sudo apt install -y postgresql postgresql-contrib
-sudo apt install -y build-essential zlib1g-dev libxslt1-dev libxml2-dev libldap2-dev libsasl2-dev libpq-dev
+sudo apt install -y build-essential zlib1g-dev libxslt1-dev libxml2-dev libldap2-dev libsasl2-dev libpq-dev libmysqlclient-dev
 sudo apt install -y cups python3-cups libcups2-dev cups-pdf
 sudo apt install -y openssl libssl-dev
 sudo apt install -y openssh-server
