@@ -103,13 +103,15 @@ git clone https://github.com/CybroOdoo/OpenHRMS.git -b 14.0 --depth=1 --single-b
 git clone https://github.com/CybroOdoo/CybroAddons.git -b 14.0 --depth=1 --single-branch
 
 # # Others
-git clone https://github.com/Jarsa/transport-management-system.git -b 14.0 --depth=1 --single-branch
+#git clone https://github.com/Jarsa/transport-management-system.git -b 14.0 --depth=1 --single-branch
 # git clone https://gitlab.com/hailangvn/task-pomodoro.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/gityopie/odoo-addons.git -b 14.0 --depth=1 --single-branch
 git clone https://github.com/ksolves-store/web_listview_sticky_header.git -b 14.0 --depth=1 --single-branch
 
 #git clone https://github.com/EESTISOFT/ees_columns_toggles.git -b 14.0 --depth=1
 #git clone https://github.com/EESTISOFT/ees_sticky_table_header.git -b 14.0 --depth=1
+
+git clone https://github.com/Tlki/web_tree_header_buttons_always_visible.git -b 14.0 --depth=1
 
 cd ..
 
