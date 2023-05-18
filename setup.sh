@@ -37,7 +37,7 @@ done
 
 # Clone directories
 cd $DIRPATH
-git clone https://github.com/odoo/odoo.git -b 14.0 --depth=1 --single-branch
+git clone https://github.com/odoo/odoo.git -b 16.0 --depth=1 --single-branch
 sh $DIRPATH/gitpull.sh
 
 # Prepare virtualenv
@@ -54,7 +54,7 @@ pip install -r $CUSTOM_ADDONS/requirements.txt
 
 # Config OpenUpgrade
 if [ $OPEN_UPGRADE = True ]; then
-    git clone https://github.com/OCA/OpenUpgrade.git -b 14.0 --depth=1 --single-branch
+    git clone https://github.com/OCA/OpenUpgrade.git -b 16.0 --depth=1 --single-branch
     pip install -r $DIRPATH/OpenUpgrade/requirements.txt
     pip install git+https://github.com/OCA/openupgradelib.git
 fi
