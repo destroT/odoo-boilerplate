@@ -1,4 +1,4 @@
-# Odoo 14 
+# Odoo 15 
 
 Scripts to prepare a new Odoo environment for either running or upgrading to a new version
 
