@@ -19,8 +19,8 @@ sudo apt install -y npm node-less
 sudo apt install -y multitail
 sudo npm install -g less
 sudo ln -s /usr/bin/nodejs /usr/bin/node
-wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
-sudo dpkg -i wkhtmltox_0.12.6-1.focal_amd64.deb
+sudo dpkg -i wkhtmltox_0.12.5-1.jammy_amd64
+
 
 # Create Users
 sudo adduser -group odoo
