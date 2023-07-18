@@ -35,11 +35,6 @@ fi
 done
 
 
-# Clone directories
-cd $DIRPATH
-git clone https://github.com/odoo/odoo.git -b 14.0 --depth=1 --single-branch
-sh $DIRPATH/gitpull.sh
-
 # Prepare virtualenv
 pip install --upgrade pip
 python3 -m venv venv
@@ -47,6 +42,12 @@ python3 -m venv venv
 
 pip install wheel
 pip install pysftp
+
+# Clone directories
+cd $DIRPATH
+pip install -r $DIRPATH/requirements.txt
+gitaggregate -c repos.yaml -j 100
+
 pip install -r $DIRPATH/odoo/requirements.txt
 # Installing Odoo allows VsCode to locate all modules but can cause problems
 # pip install $DIRPATH/odoo/
