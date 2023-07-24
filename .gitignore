@@ -1,8 +1,5 @@
-external-addons
-OCA
-PR
-odoo
-OpenUpgrade
-venv
 *.conf
 *.swp
+venv/
+*/
+.env

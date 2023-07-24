@@ -1,0 +1,335 @@
+# ./addons/chiarcosso_odoo:
+#   remotes:
+#     origin: git@github.com:Chiarcosso/chiarcosso_odoo.git
+#   target: origin feature/16.0
+#   merges:
+#     - origin feature/16.0
+./odoo:
+  remotes:
+    origin: https://github.com/odoo/odoo.git
+  target: origin 16.0
+  merges:
+    - origin 16.0
+./OCA/account-financial-reporting:
+  remotes:
+    oca: https://github.com/OCA/account-financial-reporting
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/1049/head # mis_builder_cash_flow
+    # - oca refs/pull/1028/head # partner_statement
+./OCA/account-financial-tools:
+  remotes:
+    oca: https://github.com/OCA/account-financial-tools
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/1549/head # account_asset_management_menu
+    - oca refs/pull/1658/head # account_move_budget
+    - oca refs/pull/1631/head # account_move_fiscal_year
+    - oca refs/pull/1621/head # account_move_line_menu
+    - oca refs/pull/1617/head # account_move_line_sale_info
+    - oca refs/pull/1542/head # account_partner_required
+    # - oca refs/pull/1618/head # product_category_tax
+    # account_lock_date_update
+    # account_maturity_date_default
+./OCA/account-payment:
+  remotes:
+    oca: https://github.com/OCA/account-payment
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/account-reconcile:
+  remotes:
+    oca: https://github.com/OCA/account-reconcile
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/bank-statement-import:
+  remotes:
+    oca: https://github.com/OCA/bank-statement-import
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/connector:
+  remotes:
+    oca: https://github.com/OCA/connector
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/connector-telephony:
+  remotes:
+    oca: https://github.com/OCA/connector-telephony
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/300/head # base_phone
+./OCA/fleet:
+  remotes:
+    oca: https://github.com/OCA/fleet
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    # - oca refs/pull/114/head # fleet_vehicle_log_fuel
+./OCA/helpdesk:
+  remotes:
+    oca: https://github.com/OCA/helpdesk
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/450/head # helpdesk_mgmt_sla
+./OCA/hr:
+  remotes:
+    oca: https://github.com/OCA/hr
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/1216/head # hr_contract_reference
+    - oca refs/pull/1179/head # hr_employee_birth_name
+    - oca refs/pull/1242/head # hr_employee_calendar_planning
+    - oca refs/pull/1181/head # hr_employee_document
+    # - oca refs/pull/1225/head # hr_employee_service
+    # - oca refs/pull/1226/head # hr_employee_service_contract
+    - oca refs/pull/1241/head # hr_job_category
+./OCA/hr-holidays:
+  remotes:
+    oca: https://github.com/OCA/hr-holidays
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/knowledge:
+  remotes:
+    oca: https://github.com/OCA/knowledge
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/l10n-italy:
+  remotes:
+    oca: https://github.com/OCA/l10n-italy
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/3271/head # l10n_it_asset_management
+    # - oca refs/pull/3060/head # fiscal_epos_print
+    - oca refs/pull/3002/head # l10n_it_central_journal_reportlab
+    # - oca refs/pull/3032/head # l10n_it_delivery_note_batch
+    - oca refs/pull/3332/head # l10n_it_fatturapa_export_zip
+    - oca refs/pull/3333/head # l10n_it_fatturapa_in_purchase
+    - oca refs/pull/3178/head # l10n_it_fatturapa_out_di
+    # - oca refs/pull/3202/head # l10n_it_fatturapa_out_rc
+    - oca refs/pull/3179/head # l10n_it_fatturapa_out_stamp
+    - oca refs/pull/3181/head # l10n_it_fatturapa_out_wt
+    # - oca refs/pull/3190/head # l10n_it_fatturapa_pec
+    # - oca refs/pull/3077/head # l10n_it_fatturapa_sale
+    - oca refs/pull/3069/head # l10n_it_intrastat
+    # - oca refs/pull/3327/head # l10n_it_intrastat_statement
+    # - oca refs/pull/3029/head # l10n_it_location_nuts
+    - oca refs/pull/3079/head # l10n_it_pos_fiscalcode
+    - oca refs/pull/3080/head # l10n_it_vat_registries
+    - oca refs/pull/3137/head # l10n_it_vat_statement_communication
+    - oca refs/pull/3276/head # l10n_it_withholding_tax_payment
+    # Mancano
+    # l10n_it_fatturapa_out_oss
+    # l10n_it_fatturapa_out_sp
+    # l10n_it_fatturapa_out_triple_discount
+    # l10n_it_fatturapa_out_welfare
+    # l10n_it_fatturapa_sdicoop
+    # l10n_it_vat_registries_split_payment
+    # l10n_it_vat_statement_split_payment
+./OCA/partner-contact:
+  remotes:
+    oca: https://github.com/OCA/partner-contact
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/1398/head # base_location_nuts
+    - oca refs/pull/1524/head # partner_deduplicate_acl
+    - oca refs/pull/1518/head # partner_contact_birthplace
+    - oca refs/pull/1497/head # partner_email_check
+    - oca refs/pull/1519/head # partner_phone_extension
+    # partner_priority 1392
+    # partner_phone_secondary 1420
+    # partner_affiliate
+    # partner_deduplicate_by_ref
+    # partner_employee_quantity
+    # partner_phonecall_schedule
+./OCA/product-attribute:
+  remotes:
+    oca: https://github.com/OCA/product-attribute
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/1192/head # product_abc_classification
+    # - oca refs/pull/1196/head # product_abc_classification_sale_stock
+    - oca refs/pull/1215/head # product_packaging_type
+    # - oca refs/pull/1216/head # product_packaging_type_pallet
+    - oca refs/pull/1179/head # uom_extra_data
+./OCA/project:
+  remotes:
+    oca: https://github.com/OCA/project
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/1084/head # project_task_code
+    - oca refs/pull/1110/head # project_task_material
+    # - oca refs/pull/1111/head # project_task_pull_request
+    # - oca refs/pull/1116/head # project_timeline_hr_timesheet
+    - oca refs/pull/1093/head # project_task_stage_state
+    # project_forecast_line
+    # project_forecast_line_bokeh_chart
+    # project_forecast_line_holidays_public
+    # project_milestone
+    # project_status
+    # project_task_dependency
+    # project_task_milestone
+./OCA/purchase-workflow:
+  remotes:
+    oca: https://github.com/OCA/purchase-workflow
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/queue:
+  remotes:
+    oca: https://github.com/OCA/queue
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/report-print-send:
+  remotes:
+    oca: https://github.com/OCA/report-print-send
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/reporting-engine:
+  remotes:
+    oca: https://github.com/OCA/reporting-engine
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/rest-framework:
+  remotes:
+    oca: https://github.com/OCA/rest-framework
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/server-auth:
+  remotes:
+    oca: https://github.com/OCA/server-auth
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    # - oca refs/pull/513/head # auth_oauth_multi_token
+    - oca refs/pull/512/head # users_ldap_mail
+    # - oca refs/pull/507/head # auth_session_timeout
+    # auth_api_key_group
+    # auth_api_key_server_env
+    # auth_jwt
+    # auth_jwt_demo
+./OCA/server-brand:
+  remotes:
+    oca: https://github.com/OCA/server-brand
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/server-env:
+  remotes:
+    oca: https://github.com/OCA/server-env
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/server-tools:
+  remotes:
+    oca: https://github.com/OCA/server-tools
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/2514/head # auto_backup DA RIVEDERE
+    # - oca refs/pull/2644/head # base_conditional_image
+    - oca refs/pull/2473/head # database_cleanup
+    - oca refs/pull/2574/head # fetchmail_notify_error_to_sender
+    # - oca refs/pull/2590/head # html_text
+    # base_multi_image
+    # datetime_formatter
+    # fetchmail_incoming_log
+    # letsencrypt
+./OCA/server-ux:
+  remotes:
+    oca: https://github.com/OCA/server-ux
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/social:
+  remotes:
+    oca: https://github.com/OCA/social
+  target: oca 16.0
+  merges:
+    - oca 16.0
+./OCA/stock-logistics-reporting:
+  remotes:
+    oca: https://github.com/OCA/stock-logistics-reporting
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/257/head # stock_average_daily_sale
+./OCA/stock-logistics-warehouse:
+  remotes:
+    oca: https://github.com/OCA/stock-logistics-warehouse
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/1664/head # scrap_location_filter
+    - oca refs/pull/1665/head # stock_archive_constraint
+    - oca refs/pull/1674/head # stock_change_qty_reason
+    # - oca refs/pull/1669/head # stock_cycle_count
+    - oca refs/pull/1666/head # stock_inventory
+    # - oca refs/pull/1668/head # stock_inventory_discrepancy
+    # - oca refs/pull/1667/head # stock_inventory_exclude_sublocation
+    - oca refs/pull/1676/head # stock_inventory_line_product_cost
+    - oca refs/pull/1662/head # stock_inventory_revaluation_mrp
+    # - oca refs/pull/1663/head # stock_inventory_revaluation_wip
+    - oca refs/pull/1672/head # stock_location_last_inventory_date
+    # - oca refs/pull/1695/head # stock_reserve_sale
+    # - oca refs/pull/1701/head # stock_secondary_unit
+    # stock_request
+./OCA/timesheet:
+  remotes:
+    oca: https://github.com/OCA/timesheet
+  target: oca 16.0
+  merges:
+    - oca 16.0
+    - oca refs/pull/569/head # sale_timesheet_line_exclude
+    # - oca refs/pull/587/head # hr_timesheet_task_stage
+    - oca refs/pull/582/head # hr_timesheet_time_type
+    # - oca refs/pull/580/head # hr_timesheet_sheet
+./OCA/web:
+  remotes:
+    oca: https://github.com/OCA/web
+    destrot: https://github.com/destroT/web
+  target: oca 16.0
+  merges:
+    # - destrot refs/pull/1/head
+    - oca 16.0
+    - oca refs/pull/2458/head # web_copy_confirm
+    - oca refs/pull/2528/head # web_drop_target
+    - oca refs/pull/2325/head # web_dashboard_tile
+    - oca refs/pull/2490/head # web_group_expand
+    - oca refs/pull/2328/head # web_ir_actions_act_multi
+    - oca refs/pull/2389/head # web_ir_actions_act_window_message
+    - oca refs/pull/2355/head # web_listview_range_select
+    # - oca refs/pull/2448/head # web_m2x_options_manager
+    # - oca refs/pull/2526/head # web_widget_bokeh_chart
+    - oca refs/pull/2447/head # web_widget_image_download
+    - oca refs/pull/2476/head # web_widget_json_graph
+    - oca refs/pull/2453/head # web_widget_open_tab
+    - oca refs/pull/2431/head # web_widget_url_advanced
+    - oca refs/pull/2520/head # web_widget_x2many_2d_matrix
+    # Mancano
+    # web_view_calendar_list
+    # web_widget_child_selector
+    # web_widget_domain_editor_dialog
+./OCA/web-api:
+  remotes:
+    oca: https://github.com/OCA/web-api
+  target: oca 16.0
+  merges:
+    - oca 16.0

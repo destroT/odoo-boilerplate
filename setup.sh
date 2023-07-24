@@ -34,27 +34,27 @@ else
 fi
 done
 
-
-# Clone directories
-cd $DIRPATH
-git clone https://github.com/odoo/odoo.git -b 16.0 --depth=1 --single-branch
-sh $DIRPATH/gitpull.sh
-
 # Prepare virtualenv
 pip install --upgrade pip
 python3 -m venv venv
 . $DIRPATH/venv/bin/activate
 
-pip install wheel
-pip install pysftp
+# Clone directories
+cd $DIRPATH
+pip install -r $DIRPATH/requirements.txt
+gitaggregate -c repos.yaml -j 100
+
+# Install python dependencies
+pip install wheel pysftp
 pip install -r $DIRPATH/odoo/requirements.txt
+pip install -r $CUSTOM_ADDONS/requirements.txt
+
 # Installing Odoo allows VsCode to locate all modules but can cause problems
 # pip install $DIRPATH/odoo/
-pip install -r $CUSTOM_ADDONS/requirements.txt
 
 # Config OpenUpgrade
 if [ $OPEN_UPGRADE = True ]; then
-    git clone https://github.com/OCA/OpenUpgrade.git -b 16.0 --depth=1 --single-branch
+    gitaggregate -c repos-ou.yaml -j 20
     pip install -r $DIRPATH/OpenUpgrade/requirements.txt
     pip install git+https://github.com/OCA/openupgradelib.git
 fi

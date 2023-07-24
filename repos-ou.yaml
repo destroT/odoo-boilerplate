@@ -1,0 +1,11 @@
+./OpenUpgrade:
+  remotes:
+    origin: https://github.com/OCA/OpenUpgrade.git
+  target: origin 16.0
+  merges:
+    - origin 16.0
+    - origin refs/pull/3934/head # barcodes_gs1_nomenclature
+    - origin refs/pull/3966/head # stock
+    - origin refs/pull/4067/head # purchase_stock
+    - origin refs/pull/3971/head # stock_account
+    - origin refs/pull/3970/head # stock_sms
