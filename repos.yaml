@@ -6,7 +6,6 @@
 #     - origin feature/14.0
 # external-addons
 # # MUK
-# git clone https://github.com/muk-it/muk_base.git -b 14.0 --depth=1 --single-branch
 # git clone https://github.com/muk-it/muk_web.git -b 14.0 --depth=1 --single-branch
 # # # Serpent
 # git clone https://github.com/JayVora-SerpentCS/fleet_management.git -b 14.0 --depth=1 --single-branch
@@ -15,8 +14,6 @@
 # git clone https://github.com/CybroOdoo/OpenHRMS.git -b 14.0 --depth=1 --single-branch
 # git clone https://github.com/CybroOdoo/CybroAddons.git -b 14.0 --depth=1 --single-branch
 # # # Others
-# git clone https://github.com/gityopie/odoo-addons.git -b 14.0 --depth=1 --single-branch
-# git clone https://github.com/ksolves-store/web_listview_sticky_header.git -b 14.0 --depth=1 --single-branch
 # git clone https://github.com/Tlki/web_tree_header_buttons_always_visible.git -b 14.0 --depth=1
 ./odoo:
   defaults:
@@ -114,6 +111,16 @@
   target: oca 14.0
   merges:
     - oca 14.0
+
+./OCA/brand:
+  defaults:
+      depth: 1
+  remotes:
+    oca: https://github.com/OCA/brand
+  target: oca 14.0
+  merges:
+    - oca 14.0
+
 ./OCA/calendar:
   defaults:
       depth: 1
@@ -531,12 +538,13 @@
     - oca 14.0
 ./OCA/stock-logistics-reporting:
   defaults:
-      depth: 1
+    depth: 1
   remotes:
     oca: https://github.com/OCA/stock-logistics-reporting
   target: oca 14.0
   merges:
     - oca 14.0
+    # - oca refs/pull/292/head
 ./OCA/stock-logistics-tracking:
   defaults:
       depth: 1
@@ -625,20 +633,28 @@
   target: oca 14.0
   merges:
     - oca 14.0
-./c2c-cloud-platform:
+./nuobit:
   defaults:
       depth: 1
   remotes:
-    origin: https://github.com/camptocamp/odoo-cloud-platform.git
-  target: origin 14.0
-  merges:
-    - origin 14.0
-
-./OCA/brand:
-  defaults:
-      depth: 1
-  remotes:
-    oca: https://github.com/OCA/brand
+    oca: https://github.com/nuobit/odoo-addons.git
   target: oca 14.0
   merges:
     - oca 14.0
+  
+#./c2c-cloud-platform:
+  #defaults:
+  #depth: 1
+  #remotes:
+  #origin: https://github.com/camptocamp/odoo-cloud-platform.git
+  #target: origin 14.0
+  #merges:
+  #- origin 14.0
+# ./maps:
+#   defaults:
+#       depth: 1
+#   remotes:
+#     main: https://github.com/gityopie/odoo-addons
+#   target: main 14.0
+#   merges:
+#     - main 14.0
